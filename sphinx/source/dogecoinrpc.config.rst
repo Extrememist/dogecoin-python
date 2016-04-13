@@ -1,7 +1,7 @@
-:mod:`dogecoinrpc.config` --- Utilities for reading dogecoin configuration files
+:mod:`bitbeanrpc.config` --- Utilities for reading bitbean configuration files
 ====================================================================================
 
-.. automodule:: dogecoinrpc.config
+.. automodule:: bitbeanrpc.config
    :members:
    :show-inheritance:
    

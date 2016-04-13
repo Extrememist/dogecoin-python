@@ -1,7 +1,7 @@
-dogecoin-python is a fork of bitcoin-python : https://github.com/laanwj/bitcoin-python
+bitbean-python is a fork of bitcoin-python : https://github.com/laanwj/bitcoin-python
 
 It is a set of Python libraries that allows easy access to the
-dogecoin peer-to-peer cryptocurrency client API.
+bitbean peer-to-peer cryptocurrency client API.
 
 
 Documentation
@@ -9,13 +9,13 @@ Documentation
 
 The documentation for bitcoin-python can be found here (or built from sources) :
 
-http://jcsaaddupuy.github.io/dogecoin-python/doc/index.html
+http://jcsaaddupuy.github.io/bitbean-python/doc/index.html
 
 
 Installation instructions
 ===========================
 
-dogecoin-python uses setuptools for the install script. There are no dependencies apart from Python itself.
+bitbean-python uses setuptools for the install script. There are no dependencies apart from Python itself.
 
 ::
 
@@ -26,19 +26,19 @@ dogecoin-python uses setuptools for the install script. There are no dependencie
 Pypi / Cheeseshop
 ==================
 
-It is possible to install the package through Pypi (cheeseshop), see http://pypi.python.org/pypi?:action=display&name=dogecoin-python
+It is possible to install the package through Pypi (cheeseshop), see http://pypi.python.org/pypi?:action=display&name=bitbean-python
 ::
- $ pip install dogecoin-python
+ $ pip install bitbean-python
  # if not working, try
- $ pip install --pre dogecoin-python
+ $ pip install --pre bitbean-python
 
-Connection to dogecoin-qt
+Connection to bitbean-qt
 =========================
 
-If you want to connect to dogecoin-qt, add server=1 in your dogecoin.conf
+If you want to connect to bitbean-qt, add server=1 in your bitbean.conf
 ::
 
- rpcuser=dogecoinrpc
+ rpcuser=bitbeanrpc
  rpcpassword=A RANDOM GENERATED PASSWORD
  server=1
 
@@ -46,5 +46,5 @@ TODO
 ======
 These things still have to be added:
 
-- SSL support (including certificate verification) for managing remote dogecoin daemons.
+- SSL support (including certificate verification) for managing remote bitbean daemons.
 

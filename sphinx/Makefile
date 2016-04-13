@@ -61,9 +61,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/dogecoin-python.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/bitbean-python.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/dogecoin-python.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/bitbean-python.qhc"
 
 latex:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex

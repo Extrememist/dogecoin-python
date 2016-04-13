@@ -1,7 +1,7 @@
-:mod:`dogecoinrpc.connection` --- Connect to Dogecoin server via JSON-RPC
+:mod:`bitbeanrpc.connection` --- Connect to bitbean server via JSON-RPC
 ====================================================================================
 
-.. automodule:: dogecoinrpc.connection
+.. automodule:: bitbeanrpc.connection
    :members:
    :show-inheritance:
 

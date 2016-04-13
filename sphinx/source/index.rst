@@ -1,9 +1,9 @@
 ==================================================
- dogecoin-python - Easy-to-use Dogecoin API client.
+ bitbean-python - Easy-to-use bitbean API client.
 ==================================================
 
-``dogecoin-python`` is a set of Python libraries that allows easy access to the
-dogecoin_ peer-to-peer cryptocurrency client API.
+``bitbean-python`` is a set of Python libraries that allows easy access to the
+bitbean_ peer-to-peer cryptocurrency client API.
 
 Contents:
 
@@ -20,5 +20,5 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. _dogecoin: http://dogecoin.com/
+.. _bitbean: http://bitbean.com/
 

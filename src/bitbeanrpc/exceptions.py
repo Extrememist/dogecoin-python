@@ -22,11 +22,11 @@ Exception definitions.
 """
 
 
-class DogecoinException(Exception):
+class bitbeanException(Exception):
     """
-    Base class for exceptions received from Dogecoin server.
+    Base class for exceptions received from bitbean server.
 
-    - *code* -- Error code from ``dogecoind``.
+    - *code* -- Error code from ``bitbeand``.
     """
     # Standard JSON-RPC 2.0 errors
     INVALID_REQUEST  = -32600,
@@ -46,7 +46,7 @@ class DogecoinException(Exception):
     DESERIALIZATION_ERROR       = -22 # Error parsing or validating structure in raw format
 
     # P2P client errors
-    CLIENT_NOT_CONNECTED        = -9  # Dogecoin is not connected
+    CLIENT_NOT_CONNECTED        = -9  # bitbean is not connected
     CLIENT_IN_INITIAL_DOWNLOAD  = -10 # Still downloading initial blocks
 
     # Wallet errors
@@ -85,40 +85,40 @@ class TransportException(Exception):
 
 
 ##### General application defined errors
-class SafeMode(DogecoinException):
+class SafeMode(bitbeanException):
     """
-    Operation denied in safe mode (run ``dogecoind`` with ``-disablesafemode``).
+    Operation denied in safe mode (run ``bitbeand`` with ``-disablesafemode``).
     """
 
 
-class JSONTypeError(DogecoinException):
+class JSONTypeError(bitbeanException):
     """
     Unexpected type was passed as parameter
     """
 InvalidAmount = JSONTypeError  # Backwards compatibility
 
 
-class InvalidAddressOrKey(DogecoinException):
+class InvalidAddressOrKey(bitbeanException):
     """
     Invalid address or key.
     """
 InvalidTransactionID = InvalidAddressOrKey  # Backwards compatibility
 
 
-class OutOfMemory(DogecoinException):
+class OutOfMemory(bitbeanException):
     """
     Out of memory during operation.
     """
 
 
-class InvalidParameter(DogecoinException):
+class InvalidParameter(bitbeanException):
     """
     Invalid parameter provided to RPC call.
     """
 
 
 ##### Client errors
-class ClientException(DogecoinException):
+class ClientException(bitbeanException):
     """
     P2P network error.
     This exception is never raised but functions as a superclass
@@ -139,7 +139,7 @@ class DownloadingBlocks(ClientException):
 
 
 ##### Wallet errors
-class WalletError(DogecoinException):
+class WalletError(bitbeanException):
     """
     Unspecified problem with wallet (key not found etc.)
     """
@@ -197,31 +197,31 @@ class WalletAlreadyUnlocked(WalletError):
 # For convenience, we define more specific exception classes
 # for the more common errors.
 _exception_map = {
-    DogecoinException.FORBIDDEN_BY_SAFE_MODE: SafeMode,
-    DogecoinException.TYPE_ERROR: JSONTypeError,
-    DogecoinException.WALLET_ERROR: WalletError,
-    DogecoinException.INVALID_ADDRESS_OR_KEY: InvalidAddressOrKey,
-    DogecoinException.WALLET_INSUFFICIENT_FUNDS: InsufficientFunds,
-    DogecoinException.OUT_OF_MEMORY: OutOfMemory,
-    DogecoinException.INVALID_PARAMETER: InvalidParameter,
-    DogecoinException.CLIENT_NOT_CONNECTED: NotConnected,
-    DogecoinException.CLIENT_IN_INITIAL_DOWNLOAD: DownloadingBlocks,
-    DogecoinException.WALLET_INSUFFICIENT_FUNDS: InsufficientFunds,
-    DogecoinException.WALLET_INVALID_ACCOUNT_NAME: InvalidAccountName,
-    DogecoinException.WALLET_KEYPOOL_RAN_OUT: KeypoolRanOut,
-    DogecoinException.WALLET_UNLOCK_NEEDED: WalletUnlockNeeded,
-    DogecoinException.WALLET_PASSPHRASE_INCORRECT: WalletPassphraseIncorrect,
-    DogecoinException.WALLET_WRONG_ENC_STATE: WalletWrongEncState,
-    DogecoinException.WALLET_ENCRYPTION_FAILED: WalletEncryptionFailed,
-    DogecoinException.WALLET_ALREADY_UNLOCKED: WalletAlreadyUnlocked,
+    bitbeanException.FORBIDDEN_BY_SAFE_MODE: SafeMode,
+    bitbeanException.TYPE_ERROR: JSONTypeError,
+    bitbeanException.WALLET_ERROR: WalletError,
+    bitbeanException.INVALID_ADDRESS_OR_KEY: InvalidAddressOrKey,
+    bitbeanException.WALLET_INSUFFICIENT_FUNDS: InsufficientFunds,
+    bitbeanException.OUT_OF_MEMORY: OutOfMemory,
+    bitbeanException.INVALID_PARAMETER: InvalidParameter,
+    bitbeanException.CLIENT_NOT_CONNECTED: NotConnected,
+    bitbeanException.CLIENT_IN_INITIAL_DOWNLOAD: DownloadingBlocks,
+    bitbeanException.WALLET_INSUFFICIENT_FUNDS: InsufficientFunds,
+    bitbeanException.WALLET_INVALID_ACCOUNT_NAME: InvalidAccountName,
+    bitbeanException.WALLET_KEYPOOL_RAN_OUT: KeypoolRanOut,
+    bitbeanException.WALLET_UNLOCK_NEEDED: WalletUnlockNeeded,
+    bitbeanException.WALLET_PASSPHRASE_INCORRECT: WalletPassphraseIncorrect,
+    bitbeanException.WALLET_WRONG_ENC_STATE: WalletWrongEncState,
+    bitbeanException.WALLET_ENCRYPTION_FAILED: WalletEncryptionFailed,
+    bitbeanException.WALLET_ALREADY_UNLOCKED: WalletAlreadyUnlocked,
 }
 
 
 def wrap_exception(error):
     """
-    Convert a JSON error object to a more specific Dogecoin exception.
+    Convert a JSON error object to a more specific bitbean exception.
     """
     # work around to temporarily fix https://github.com/bitcoin/bitcoin/issues/3007
-    if error['code'] == DogecoinException.WALLET_ERROR and error['message'] == u'Insufficient funds':
-        error['code'] = DogecoinException.WALLET_INSUFFICIENT_FUNDS
-    return _exception_map.get(error['code'], DogecoinException)(error)
+    if error['code'] == bitbeanException.WALLET_ERROR and error['message'] == u'Insufficient funds':
+        error['code'] = bitbeanException.WALLET_INSUFFICIENT_FUNDS
+    return _exception_map.get(error['code'], bitbeanException)(error)

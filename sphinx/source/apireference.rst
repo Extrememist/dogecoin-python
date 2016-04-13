@@ -5,9 +5,9 @@
 .. toctree::
    :maxdepth: 2
 
-   dogecoinrpc.rst
-   dogecoinrpc.connection.rst
-   dogecoinrpc.exceptions.rst
-   dogecoinrpc.data.rst
-   dogecoinrpc.config.rst
+   bitbeanrpc.rst
+   bitbeanrpc.connection.rst
+   bitbeanrpc.exceptions.rst
+   bitbeanrpc.data.rst
+   bitbeanrpc.config.rst
 

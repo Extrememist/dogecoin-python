@@ -1,7 +1,7 @@
-:mod:`dogecoinrpc.exceptions` --- Exception definitions
+:mod:`bitbeanrpc.exceptions` --- Exception definitions
 ====================================================================================
 
-.. automodule:: dogecoinrpc.exceptions
+.. automodule:: bitbeanrpc.exceptions
    :members:
    :show-inheritance:
       

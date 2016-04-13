@@ -1,7 +1,7 @@
-:mod:`dogecoinrpc.data` --- Dogecoin RPC service, data objects
+:mod:`bitbeanrpc.data` --- bitbean RPC service, data objects
 ====================================================================================
 
-.. automodule:: dogecoinrpc.data
+.. automodule:: bitbeanrpc.data
    :members:
    :show-inheritance:
    

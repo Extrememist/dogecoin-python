@@ -1,7 +1,7 @@
-:mod:`dogecoinrpc` --- Convenience functions
+:mod:`bitbeanrpc` --- Convenience functions
 ====================================================================================
 
-.. automodule:: dogecoinrpc
+.. automodule:: bitbeanrpc
    :members:
    :show-inheritance:
       

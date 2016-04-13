@@ -18,41 +18,41 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-dogecoin-python - Easy-to-use Dogecoin API client
+bitbean-python - Easy-to-use bitbean API client
 """
 
 
 def connect_to_local(filename=None):
     """
-    Connect to default dogecoin instance owned by this user, on this machine.
+    Connect to default bitbean instance owned by this user, on this machine.
 
-    Returns a :class:`~dogecoinrpc.connection.DogecoinConnection` object.
+    Returns a :class:`~bitbeanrpc.connection.bitbeanConnection` object.
 
     Arguments:
 
         - `filename`: Path to a configuration file in a non-standard location (optional)
     """
-    from dogecoinrpc.connection import DogecoinConnection
-    from dogecoinrpc.config import read_default_config
+    from bitbeanrpc.connection import bitbeanConnection
+    from bitbeanrpc.config import read_default_config
 
     cfg = read_default_config(filename)
     if cfg is None:
         cfg = {}
-    #port = int(cfg.get('rpcport', '18332' if cfg.get('testnet') else '22555'))
-    port = int(cfg.get('rpcport', '22555'))
+    #port = int(cfg.get('rpcport', '18332' if cfg.get('testnet') else '22461'))
+    port = int(cfg.get('rpcport', '22461'))
     rpcuser = cfg.get('rpcuser', '')
     rpcpassword = cfg.get('rpcpassword', '')
 
-    return DogecoinConnection(rpcuser, rpcpassword, 'localhost', port)
+    return bitbeanConnection(rpcuser, rpcpassword, 'localhost', port)
 
 
-def connect_to_remote(user, password, host='localhost', port=22555,
+def connect_to_remote(user, password, host='localhost', port=22461,
                       use_https=False):
     """
-    Connect to remote or alternative local dogecoin client instance.
+    Connect to remote or alternative local bitbean client instance.
 
-    Returns a :class:`~dogecoinrpc.connection.DogecoinConnection` object.
+    Returns a :class:`~bitbeanrpc.connection.bitbeanConnection` object.
     """
-    from dogecoinrpc.connection import DogecoinConnection
+    from bitbeanrpc.connection import bitbeanConnection
 
-    return DogecoinConnection(user, password, host, port, use_https)
+    return bitbeanConnection(user, password, host, port, use_https)

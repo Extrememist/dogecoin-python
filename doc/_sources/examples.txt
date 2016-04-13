@@ -2,25 +2,25 @@
   Examples
 ****************************
 
-A basic program that uses ``python-dogecoin`` looks like this:
+A basic program that uses ``python-bitbean`` looks like this:
 
 First, import the library and exceptions.
 
 ::
 
-    import dogecoinrpc
-    from dogecoinrpc.exceptions import InsufficientFunds
+    import bitbeanrpc
+    from bitbeanrpc.exceptions import InsufficientFunds
 
-Then, we connect to the currently running ``dogecoin`` instance of the current user on the local machine
+Then, we connect to the currently running ``bitbean`` instance of the current user on the local machine
 with one call to
-:func:`~dogecoinrpc.connect_to_local`. This returns a :class:`~dogecoinrpc.connection.DogecoinConnection` objects:
+:func:`~bitbeanrpc.connect_to_local`. This returns a :class:`~bitbeanrpc.connection.bitbeanConnection` objects:
 
 ::
 
-    conn = dogecoinrpc.connect_to_local()
+    conn = bitbeanrpc.connect_to_local()
 
-Try to move one dogecoin from account ``testaccount`` to account ``testaccount2`` using 
-:func:`~dogecoinrpc.connection.DogecoinConnection.move`. Catch the :class:`~dogecoinrpc.exceptions.InsufficientFunds`
+Try to move one bitbean from account ``testaccount`` to account ``testaccount2`` using 
+:func:`~bitbeanrpc.connection.bitbeanConnection.move`. Catch the :class:`~bitbeanrpc.exceptions.InsufficientFunds`
 exception in the case the originating account is broke:
 
 ::  
@@ -31,7 +31,7 @@ exception in the case the originating account is broke:
         print "Account does not have enough funds available!"
 
 
-Retrieve general server information with :func:`~dogecoinrpc.connection.DogecoinConnection.getinfo` and print some statistics:
+Retrieve general server information with :func:`~bitbeanrpc.connection.bitbeanConnection.getinfo` and print some statistics:
 
 ::
 
