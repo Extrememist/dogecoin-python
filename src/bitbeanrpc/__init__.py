@@ -38,15 +38,15 @@ def connect_to_local(filename=None):
     cfg = read_default_config(filename)
     if cfg is None:
         cfg = {}
-    #port = int(cfg.get('rpcport', '18332' if cfg.get('testnet') else '22461'))
-    port = int(cfg.get('rpcport', '22461'))
+    #port = int(cfg.get('rpcport', '18332' if cfg.get('testnet') else '22463'))
+    port = int(cfg.get('rpcport', '22463'))
     rpcuser = cfg.get('rpcuser', '')
     rpcpassword = cfg.get('rpcpassword', '')
 
     return bitbeanConnection(rpcuser, rpcpassword, 'localhost', port)
 
 
-def connect_to_remote(user, password, host='localhost', port=22461,
+def connect_to_remote(user, password, host='localhost', port=22463,
                       use_https=False):
     """
     Connect to remote or alternative local bitbean client instance.

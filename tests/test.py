@@ -30,7 +30,7 @@ if __name__ == "__main__":
     else:
         from bitbeanrpc.config import read_default_config
         cfg = read_default_config(None)
-    port = int(cfg.get('rpcport', '22461'))
+    port = int(cfg.get('rpcport', '22463'))
     rpcuser = cfg.get('rpcuser', '')
 
     connections = []
